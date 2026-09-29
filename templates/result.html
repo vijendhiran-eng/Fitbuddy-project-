@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}FitBuddy | Your Plan{% endblock %}{% block content %}
+<section class="page-head"><p class="eyebrow">YOUR FITBUDDY PLAN</p><h1>Hello, {{ user.username }} 👋</h1><p>{{ user.goal|title }} • {{ user.intensity|title }} intensity • {{ user.weight }} kg</p></section>
+<div class="result-grid"><section class="card"><div class="section-title"><h2>7-Day Workout Plan</h2><span class="pill">AI generated</span></div><pre class="plan">{{ user.updated_plan or user.original_plan }}</pre></section>
+<aside class="card tip"><h2>Nutrition / Recovery Tip</h2><p>{{ user.nutrition_tip }}</p><a class="button secondary" href="/feedback/{{ user.user_id }}">Update with feedback</a></aside></div>
+{% if user.updated_plan %}<section class="card"><h2>What changed</h2><p class="muted">Latest feedback:</p><blockquote>{{ user.feedback }}</blockquote></section>{% endif %}{% endblock %}

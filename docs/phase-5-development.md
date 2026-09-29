@@ -1,0 +1,2 @@
+# Phase 5 - Project Development
+The implementation is divided into config, database, schemas, Gemini services, routes, templates and static assets. The current SDK is used through `google-genai`; model names are environment-configurable. The app also has a local demo fallback so the complete UI/database workflow can be tested without an API key.

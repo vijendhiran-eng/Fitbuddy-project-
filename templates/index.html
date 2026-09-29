@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}FitBuddy | AI Fitness Plan{% endblock %}{% block content %}
+<section class="hero"><div><p class="eyebrow">AI FITNESS PLANNER</p><h1>Your 7-day plan,<br><span>built around you.</span></h1><p class="lead">Enter a few details and FitBuddy creates a structured workout plan plus a practical nutrition or recovery tip.</p></div>
+<div class="card form-card"><h2>Create your plan</h2><form action="/generate-workout" method="post" data-loading>
+<label>Name<input name="username" required minlength="2" maxlength="120" placeholder="Your name"></label>
+<label>User ID<input name="user_id" required minlength="2" maxlength="80" placeholder="e.g. FB001"></label>
+<div class="grid-2"><label>Age<input name="age" type="number" min="13" max="100" required></label><label>Weight (kg)<input name="weight" type="number" min="20" max="400" step="0.1" required></label></div>
+<label>Fitness goal<select name="goal" required><option value="weight loss">Weight loss</option><option value="muscle gain">Muscle gain</option><option value="general wellness">General wellness</option></select></label>
+<label>Workout intensity<select name="intensity" required><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+<button type="submit">Generate my plan →</button><p class="tiny">General wellness guidance only. Stop if exercise causes pain or you feel unwell.</p></form></div></section>{% endblock %}
